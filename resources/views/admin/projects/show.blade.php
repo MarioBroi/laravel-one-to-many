@@ -21,11 +21,26 @@
                 </div>
 
                 <div class="col">
-                    <h5 class="text-muted">{{ $project->slug }}</h5>
-                    <h3 class="text-muted">{{ $project->title }}</h3>
-                    <p>{{ $project->project_link }}</p>
-                    <p>{{ $project->project_github }}</p>
-                    <p>{{ $project->description }}</p>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="text-muted">{{ $project->slug }}</h5>
+                            <h3 class="card-title">{{ $project->title }}</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <p>{{ $project->project_link }}</p>
+                            <p>{{ $project->project_github }}</p>
+                            <p>{{ $project->description }}</p>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            Type: {{ $project->type ? $project->type->name : 'Undefined' }}
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+
+
                 </div>
             </div>
         </div>

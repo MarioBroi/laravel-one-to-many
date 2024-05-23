@@ -77,7 +77,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
@@ -103,6 +105,8 @@ class ProjectController extends Controller
 
             //dd($validated, $image_path);
             $validated['project_img'] = $image_path;
+
+            //dd($validated);
         }
 
         $project->update($validated);

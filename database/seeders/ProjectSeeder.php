@@ -18,6 +18,7 @@ class ProjectSeeder extends Seeder
             $project = new Project();
             $project->title = $faker->words(2, true);
             $project->slug = Str::of($project->title)->slug('-');
+            /* $project->type_id = $faker->numberBetween(1, 3); */
             $project->project_link = $faker->url();
             $project->project_github = $faker->url();
             $project->description = $faker->text(20);
