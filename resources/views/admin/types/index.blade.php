@@ -38,10 +38,10 @@
                                 <td class="text-center">{{ $type->name }}</td>
                                 <td class="text-center">{{ $type->slug }}</td>
                                 <td class="text-center">
-                                    <a href="" class="btn btn-primary">Show <i class="fa fa-eye"
-                                            aria-hidden="true"></i></a>
+                                    <a href="{{ route('admin.types.show', $type) }}" class="btn btn-primary">Show <i
+                                            class="fa fa-eye" aria-hidden="true"></i></a>
 
-                                    <a href="" class="btn btn-primary">Edit <i
+                                    <a href="{{ route('admin.types.edit', $type) }}" class="btn btn-primary">Edit <i
                                             class="fa-solid fa-pen-to-square"></i></a>
 
                                     <a href="" class="btn btn-danger">Delete</a>

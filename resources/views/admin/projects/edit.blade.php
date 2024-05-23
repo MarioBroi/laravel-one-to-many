@@ -2,7 +2,7 @@
 @section('content')
     <header class="bg-primary text-white py-3">
         <div class="container">
-            <h1>New project</h1>
+            <h1>Edit project</h1>
         </div>
     </header>
     <div class="container py-3">
@@ -28,7 +28,7 @@
                 <input type="text" class="form-control" @error('title') is-invalid @enderror name="title"
                     id="title" aria-describedby="titleHelper" placeholder="Project title"
                     value="{{ $project->title }}" />
-                <small id="titleHelper" class="form-text text-muted">Type a title for this post</small>
+                <small id="titleHelper" class="form-text text-muted">Type a title for this project</small>
                 @error('title')
                     <div class="text-danger py-2">
                         {{ $message }}
