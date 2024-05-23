@@ -4,13 +4,23 @@
     <header class="py-3 bg-primary">
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="text-white">Types</h1>
-            {{-- <a href="{{ route('admin.type.create') }}" class="btn btn-dark"><i class="fa fa-pencil" aria-hidden="true"></i>
-                Create new type</a> --}}
+            <a href="{{ route('admin.types.create') }}" class="btn btn-dark"><i class="fa fa-pencil" aria-hidden="true"></i>
+                Create new type</a>
         </div>
     </header>
 
     <section class="py-5">
         <div class="container">
+
+            <h3>All types</h3>
+
+            @if (session('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ session('message') }}
+                </div>
+            @endif
+
             <div class="table-responsive">
                 <table class="table table-light">
                     <thead>
