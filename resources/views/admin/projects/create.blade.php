@@ -44,7 +44,7 @@
                     @endforeach
                 </select>
             </div>
-
+            <!-- /type -->
 
             <div class="mb-3">
                 <label for="project_img" class="form-label">Project image</label>
