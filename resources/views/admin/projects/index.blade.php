@@ -57,7 +57,6 @@
                                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-primary">Edit <i
                                             class="fa-solid fa-pen-to-square"></i></a>
 
-
                                     <!-- Modal trigger button -->
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                         data-bs-target="#modalId-{{ $project->id }}">
