@@ -35,6 +35,42 @@
             <!-- /title -->
 
             <div class="mb-3">
+                <label for="type_id" class="form-label">Type</label>
+                <select class="form-select form-select-lg" name="type_id" id="type_id">
+                    <option selected>Select a type</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="project_img" class="form-label">Project image</label>
+                <input type="file" class="form-control" @error('project_img') is-invalid @enderror name="project_img"
+                    id="project_img" aria-describedby="project_imgHelper" placeholder="https://" />
+                <small id="project_imgHelper" class="form-text text-muted">Select the project image</small>
+                @error('project_img')
+                    <div class="text-danger py-2">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <!-- /project image -->
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" @error('description') is-invalid @enderror name="description" id="description"
+                    rows="5">{{ old('description') }}</textarea>
+                @error('description')
+                    <div class="text-danger py-2">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <!-- /description -->
+
+            <div class="mb-3">
                 <label for="project_link" class="form-label">Project link</label>
                 <input type="text" class="form-control" @error('project_link') is-invalid @enderror name="project_link"
                     id="project_link" aria-describedby="project_linkHelper" placeholder="Project project_link"
@@ -60,31 +96,11 @@
                     </div>
                 @enderror
             </div>
-            <!-- /project link -->
+            <!-- /project link for github-->
 
-            <div class="mb-3">
-                <label for="project_img" class="form-label">Project image</label>
-                <input type="file" class="form-control" @error('project_img') is-invalid @enderror name="project_img"
-                    id="project_img" aria-describedby="project_imgHelper" placeholder="https://" />
-                <small id="project_imgHelper" class="form-text text-muted">Select the project image</small>
-                @error('project_img')
-                    <div class="text-danger py-2">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" @error('description') is-invalid @enderror name="description" id="description"
-                    rows="5">{{ old('description') }}</textarea>
-                @error('description')
-                    <div class="text-danger py-2">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
             <button type="submit" class="btn btn-primary">Create</button>
+            <!-- /create button -->
+
         </form>
     </div>
 @endsection
